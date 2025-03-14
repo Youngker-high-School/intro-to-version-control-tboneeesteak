@@ -45,4 +45,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 5000); // Update score every 5 seconds
 
 });
-
