@@ -1,68 +1,48 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+// Wait for the DOM to fully load before running the script
+document.addEventListener("DOMContentLoaded", function() {
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
+    // 1. **Interactive News Section**: Toggle visibility of news content on button click
+    const readMoreButtons = document.querySelectorAll('.news-item button');
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const newsContent = button.previousElementSibling; // Get the <p> tag with the news content
+            if (newsContent.style.display === "none" || newsContent.style.display === "") {
+                newsContent.style.display = "block";
+                button.textContent = "Read Less"; // Change the button text
+            } else {
+                newsContent.style.display = "none";
+                button.textContent = "Read More"; // Change the button text
+            }
+        });
+    });
 
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
+    // 2. **Dynamic Schedule**: Highlight upcoming games and display today's date
+    const today = new Date();
+    const todayDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+    const scheduleItems = document.querySelectorAll('#schedule ul li');
 
-header nav ul li {
-    margin: 0 15px;
-}
+    scheduleItems.forEach(item => {
+        const gameDate = item.textContent.split(' - ')[1]; // Extract the date from the list item text
+        if (gameDate === todayDate) {
+            item.style.backgroundColor = "#f2d7d5"; // Highlight today's game
+        }
+    });
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+    // Display today's date in a designated area
+    const dateElement = document.createElement('p');
+    dateElement.textContent = `Today's Date: ${todayDate}`;
+    document.querySelector('#home').appendChild(dateElement);
 
-section {
-    padding: 20px;
-}
+    // 3. **Live Score Update (Mocked)**: Simulate a live score update for the game
+    let liveScore = 0; // Initial score
+    const scoreElement = document.createElement('p');
+    scoreElement.textContent = `Live Score: ${liveScore} - 0`;
+    document.querySelector('#home').appendChild(scoreElement);
 
-h1, h2 {
-    color: #333;
-}
+    setInterval(() => {
+        liveScore++; // Increase the score by 1 every 5 seconds
+        scoreElement.textContent = `Live Score: ${liveScore} - 0`;
+    }, 5000); // Update score every 5 seconds
 
-.news-item {
-    background-color: white;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+});
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
