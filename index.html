@@ -3,14 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website's Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sports News & Stats</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Welcome to My Page - Tyren Benallie</h1>
-    <p>Click the button to see a message.</p>
-    <button onclick="showMessage()">Click Me</button>
-    
-    <script src="script.js"></script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to the Sports Hub</h1>
+        <p>Latest updates, stats, and schedules for your favorite sports!</p>
+    </section>
+
+    <section id="news">
+        <h2>Latest News</h2>
+        <div class="news-item">
+            <h3>New Record Set by Player X</h3>
+            <p>Player X has just broken the all-time record for...</p>
+        </div>
+        <!-- More news items -->
+    </section>
+
+    <section id="stats">
+        <h2>Team Stats</h2>
+        <table>
+            <tr>
+                <th>Team</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>Team A</td>
+                <td>10</td>
+                <td>5</td>
+                <td>25</td>
+            </tr>
+            <!-- More teams -->
+        </table>
+    </section>
+
+    <section id="schedule">
+        <h2>Upcoming Schedule</h2>
+        <ul>
+            <li>Game 1 - Date: 20th March, Time: 5 PM</li>
+            <li>Game 2 - Date: 22nd March, Time: 7 PM</li>
+            <!-- More games -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sports Hub. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
+
