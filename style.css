@@ -1,43 +1,157 @@
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Style - Set background image, font styles, and layout */
+body {
+    background-image: url('images/athletics-image.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    font-family: 'Anton', sans-serif; /* Use a bold, sporty font */
+    color: white; /* Set text color to white for contrast */
+    margin: 0;
+    height: 100vh; /* Ensure the page takes full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header Styling */
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    padding: 15px 20px;
+    position: fixed; /* Keep header at the top */
+    width: 100%; /* Full width */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it's on top of other content */
 }
 
-nav ul {
+header nav ul {
     list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center the navigation items */
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+header nav ul li {
+    margin: 0 20px; /* Add space between the nav items */
 }
 
-nav ul li a {
+header nav ul li a {
     color: white;
     text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    margin: 20px;
-}
-
-footer {
-    text-align: center;
+    font-size: 18px;
     padding: 10px;
+    display: inline-block;
+}
+
+header nav ul li a:hover {
+    background-color: #ff6347; /* Add a hover effect with a red color */
+    border-radius: 5px;
+}
+
+/* Main Content Styling */
+section {
+    margin-top: 80px; /* Prevent content from being hidden behind the fixed header */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h1, section h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Add shadow to text for better readability */
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.news-item {
+    margin-bottom: 30px;
+}
+
+/* Stats Table Styling */
+table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
     background-color: #333;
     color: white;
 }
 
+table td {
+    background-color: #f4f4f4;
+}
+
+/* Schedule List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+ul li {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent footer */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    section h1 {
+        font-size: 2rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    table {
+        width: 100%;
+    }
+}
